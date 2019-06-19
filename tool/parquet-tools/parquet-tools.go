@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/xitongsys/parquet-go-source/local"
-	"github.com/xitongsys/parquet-go/reader"
-	"github.com/xitongsys/parquet-go/tool/parquet-tools/schematool"
-	"github.com/xitongsys/parquet-go/tool/parquet-tools/sizetool"
+	"github.com/calmisland/parquet-go-source/local"
+	"github.com/calmisland/parquet-go/reader"
+	"github.com/calmisland/parquet-go/tool/parquet-tools/schematool"
+	"github.com/calmisland/parquet-go/tool/parquet-tools/sizetool"
 )
 
 func main() {

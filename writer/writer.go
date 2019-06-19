@@ -7,12 +7,12 @@ import (
 	"sync"
 
 	"github.com/apache/thrift/lib/go/thrift"
-	"github.com/xitongsys/parquet-go/common"
-	"github.com/xitongsys/parquet-go/layout"
-	"github.com/xitongsys/parquet-go/marshal"
-	"github.com/xitongsys/parquet-go/source"
-	"github.com/xitongsys/parquet-go/schema"
-	"github.com/xitongsys/parquet-go/parquet"
+	"github.com/calmisland/parquet-go/common"
+	"github.com/calmisland/parquet-go/layout"
+	"github.com/calmisland/parquet-go/marshal"
+	"github.com/calmisland/parquet-go/source"
+	"github.com/calmisland/parquet-go/schema"
+	"github.com/calmisland/parquet-go/parquet"
 )
 
 //ParquetWriter is a writer  parquet file

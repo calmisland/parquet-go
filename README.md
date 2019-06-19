@@ -1,6 +1,6 @@
 # parquet-go v1.3.0
 [![Travis Status for xitongsys/parquet-go](https://travis-ci.org/xitongsys/parquet-go.svg?branch=master&label=linux+build)](https://travis-ci.org/xitongsys/parquet-go)
-[![godoc for xitongsys/parquet-go](https://godoc.org/github.com/nathany/looper?status.svg)](http://godoc.org/github.com/xitongsys/parquet-go)
+[![godoc for xitongsys/parquet-go](https://godoc.org/github.com/nathany/looper?status.svg)](http://godoc.org/github.com/calmisland/parquet-go)
 
 
 parquet-go is a pure-go implementation of reading and writing the parquet format file. 
@@ -11,7 +11,7 @@ parquet-go is a pure-go implementation of reading and writing the parquet format
 ## Install
 Add the parquet-go library to your $GOPATH/src and install dependencies:
 ```sh
-go get github.com/xitongsys/parquet-go/...
+go get github.com/calmisland/parquet-go/...
 ```
 Look at examples in `example/`. 
 ```sh
@@ -136,26 +136,26 @@ type ParquetFile interface {
 	Create(name string) (ParquetFile, error)
 }
 ```
-Using this interface, parquet-go can read/write parquet file on different platforms. All the file sources are at [parquet-go-source](https://github.com/xitongsys/parquet-go-source). Now it supports(local/hdfs/s3/gcs/memory).
+Using this interface, parquet-go can read/write parquet file on different platforms. All the file sources are at [parquet-go-source](https://github.com/calmisland/parquet-go-source). Now it supports(local/hdfs/s3/gcs/memory).
 
 ## Writer
 Three Writers are supported: ParquetWriter, JSONWriter, CSVWriter.
 * ParquetWriter is used to write predefined Golang structs.
-[Example of ParquetWriter](https://github.com/xitongsys/parquet-go/blob/master/example/local_flat.go)
+[Example of ParquetWriter](https://github.com/calmisland/parquet-go/blob/master/example/local_flat.go)
 
 * JSONWriter is used to write JSON strings
-[Example of JSONWriter](https://github.com/xitongsys/parquet-go/blob/master/example/json_write.go)
+[Example of JSONWriter](https://github.com/calmisland/parquet-go/blob/master/example/json_write.go)
 
 * CSVWriter is used to write data format similar with CSV(not nested)
-[Example of CSVWriter](https://github.com/xitongsys/parquet-go/blob/master/example/csv_write.go)
+[Example of CSVWriter](https://github.com/calmisland/parquet-go/blob/master/example/csv_write.go)
 
 ## Reader
 Two Readers are supported: ParquetReader, ColumnReader
 * ParquetReader is used to read predefined Golang structs
-[Example of ParquetReader](https://github.com/xitongsys/parquet-go/blob/master/example/local_nested.go)
+[Example of ParquetReader](https://github.com/calmisland/parquet-go/blob/master/example/local_nested.go)
 
 * ColumnReader is used to read some columns. The read function return 3 slices([value], [RepetitionLevel], [DefinitionLevel]) of the records.
-[Example of ColumnReader](https://github.com/xitongsys/parquet-go/blob/master/example/column_read.go)
+[Example of ColumnReader](https://github.com/calmisland/parquet-go/blob/master/example/column_read.go)
 
 ### Tips
 * If the parquet file is very big (even the size of parquet file is small, the uncompressed size may be very large), please don't read all rows at one time, which may induce the OOM. You can read a small portion of the data at a time like a stream-oriented file.
@@ -176,7 +176,7 @@ type Student struct {
 	Day    int32   `parquet:"name=day, type=DATE"`
 }
 ```
-[Example of tags](https://github.com/xitongsys/parquet-go/blob/master/example/local_flat.go)
+[Example of tags](https://github.com/calmisland/parquet-go/blob/master/example/local_flat.go)
 
 
 ### JSON
@@ -244,7 +244,7 @@ var jsonSchema string = `
 }
 `
 ```
-[Example of JSON schema](https://github.com/xitongsys/parquet-go/blob/master/example/json_schema.go)
+[Example of JSON schema](https://github.com/calmisland/parquet-go/blob/master/example/json_schema.go)
 
 
 ### CSV metadata
@@ -257,7 +257,7 @@ md := []string{
 	"name=Sex, type=BOOLEAN",
 }
 ```
-[Example of CSV metadata](https://github.com/xitongsys/parquet-go/blob/master/example/csv_write.go)
+[Example of CSV metadata](https://github.com/calmisland/parquet-go/blob/master/example/csv_write.go)
 
 
 ## Parallel
@@ -278,10 +278,10 @@ import (
 	"log"
 	"time"
 
-	"github.com/xitongsys/parquet-go-source/local"
-	"github.com/xitongsys/parquet-go/reader"
-	"github.com/xitongsys/parquet-go/writer"
-	"github.com/xitongsys/parquet-go/parquet"
+	"github.com/calmisland/parquet-go-source/local"
+	"github.com/calmisland/parquet-go/reader"
+	"github.com/calmisland/parquet-go/writer"
+	"github.com/calmisland/parquet-go/parquet"
 )
 
 type Student struct {
@@ -364,7 +364,7 @@ func main() {
 ```
 
 ## Tool
-* [parquet-tools](https://github.com/xitongsys/parquet-go/blob/master/tool/parquet-tools): Command line tools that aid in the inspection of Parquet files
+* [parquet-tools](https://github.com/calmisland/parquet-go/blob/master/tool/parquet-tools): Command line tools that aid in the inspection of Parquet files
 
 
 Please start to use it and give feedback or start it! Help is needed and anything is welcome.

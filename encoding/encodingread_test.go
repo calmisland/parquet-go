@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	. "github.com/xitongsys/parquet-go/common"
-	"github.com/xitongsys/parquet-go/parquet"
+	. "github.com/calmisland/parquet-go/common"
+	"github.com/calmisland/parquet-go/parquet"
 )
 
 func TestReadPlainBOOLEAN(t *testing.T) {
